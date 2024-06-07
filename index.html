@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>JamilLateef.com</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="css/my-styles.css">
+    </head>
+<body>
+        <div>
+            <header class="w3-container w3-dark-gray">  <!--w3-container adds 16 pixels of padding 
+                around each element; w3-green makes the background green -->
+                <h1>Jamil's portfolio</h1>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="gallery.html">My Work</a></li>
+                        <li><a href="services.html">Blog</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="resume.html">Resume</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div class="w3-container">
+                <h1>My Work</h1>
+            </div>
+            <br>
+            <br>
+
+            <div class="row w3-row">
+              <div class="column w3-image w3-col l3 m3 s12">
+                <img src="assets/Froggy1_72dpi.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow" style="width:100%">
+              </div>
+              <div class="column w3-image w3-col l3 m3 s12">
+                <img src="assets/Froggy1_72dpi.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow" style="width:100%">
+              </div>
+              <div class="column w3-image w3-col l3 m3 s12">
+                <img src="assets/Froggy1_72dpi.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow" style="width:100%">
+              </div>
+              <div class="column w3-image w3-col l3 m3 s12">
+                <img src="assets/Froggy1_72dpi.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow" style="width:100%">
+              </div>
+            </div>
+            
+            <!-- The Modal/Lightbox -->
+            <div id="myModal" class="modal">
+              <span class="close cursor" onclick="closeModal()">&times;</span>
+              <div class="modal-content">
+            
+                <div class="mySlides">
+                  <div class="numbertext w3-image">1 / 4</div>
+                  <img src="assets/Froggy1_300dpi.jpg" style="width:50%" class="centered">
+                </div>
+            
+                <div class="mySlides">
+                  <div class="numbertext w3-image">2 / 4</div>
+                  <img src="assets/Froggy1_300dpi.jpg" style="width:50%" class="centered">
+                </div>
+            
+                <div class="mySlides">
+                  <div class="numbertext w3-image">3 / 4</div>
+                  <img src="assets/Froggy1_300dpi.jpg" style="width:50%" class="centered">
+                </div>
+            
+                <div class="mySlides">
+                  <div class="numbertext w3-image">4 / 4</div>
+                  <img src="assets/Froggy1_300dpi.jpg" style="width:50%" class="centered">
+                </div>
+            
+                <!-- Next/previous controls -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            
+                <!-- Caption text -->
+                <div class="caption-container">
+                  <p id="caption"></p>
+                </div>
+              </div>
+            </div>
+
+              <!-- Below is the script for modal -->
+
+              <script>
+                // Open the Modal
+                function openModal() {
+                  document.getElementById("myModal").style.display = "block";
+                }
+                
+                // Close the Modal
+                function closeModal() {
+                  document.getElementById("myModal").style.display = "none";
+                }
+                
+                var slideIndex = 1;
+                showSlides(slideIndex);
+                
+                // Next/previous controls
+                function plusSlides(n) {
+                  showSlides(slideIndex += n);
+                }
+                
+                // Thumbnail image controls
+                function currentSlide(n) {
+                  showSlides(slideIndex = n);
+                }
+                
+                function showSlides(n) {
+                  var i;
+                  var slides = document.getElementsByClassName("mySlides");
+                  var dots = document.getElementsByClassName("demo");
+                  var captionText = document.getElementById("caption");
+                  if (n > slides.length) {slideIndex = 1}
+                  if (n < 1) {slideIndex = slides.length}
+                  for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                  }
+                  for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                  }
+                  slides[slideIndex-1].style.display = "block";
+                  dots[slideIndex-1].className += " active";
+                  captionText.innerHTML = dots[slideIndex-1].alt;
+                }
+                </script>
+                
+            <section class="w3-container">
+                <p>Section Reserved for body copy</p>
+                <p>Section reserved for body copy</p>
+            </section>  
+
+            <footer>
+                <p>&copy; Copyright 2024</p>
+            </footer>
+        </div>
+	</body>
+</html>
